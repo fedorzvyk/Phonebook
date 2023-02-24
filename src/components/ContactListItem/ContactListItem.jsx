@@ -1,4 +1,3 @@
-import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -11,15 +10,13 @@ import {
   FaUserEdit,
 } from 'react-icons/fa';
 
-import { deleteContact } from 'redux/contacts/contacts.operations';
 import { Modal } from 'components/Modal/Modal';
 import EditForm from 'components/EditForm/EditForm';
-// import { Box } from 'commonStyles/Box';
+import { DeleteMenu } from 'components/DeleteMenu/DeleteMenu';
 
 const ContactListItem = ({ id, number, name }) => {
-  const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [userIdState, setUserIdState] = useState('');
   return (
     <Item key={id}>
       <Button type="button" onClick={() => setIsModalOpen(isOpen => !isOpen)}>
@@ -33,10 +30,9 @@ const ContactListItem = ({ id, number, name }) => {
           <FaPhoneAlt fill="orange" /> {number}
         </span>
       </ContactWrap>
-      <Button type="button" onClick={() => dispatch(deleteContact(id))}>
+      <Button type="button" onClick={() => setUserIdState(id)}>
         <FaRegTrashAlt />
       </Button>
-
       {isModalOpen && (
         <Modal onClose={() => setIsModalOpen(isOpen => !isOpen)}>
           <EditForm
@@ -44,6 +40,12 @@ const ContactListItem = ({ id, number, name }) => {
             onClose={() => setIsModalOpen(isOpen => !isOpen)}
           />
         </Modal>
+      )}
+      {userIdState && (
+        <Modal onClose={() => setUserIdState('')}>
+          <DeleteMenu userId={userIdState} onClose={() => setUserIdState('')} />
+        </Modal>
+        //
       )}
     </Item>
   );
