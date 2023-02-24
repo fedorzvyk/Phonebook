@@ -4,16 +4,18 @@ import styled from 'styled-components';
 export const Label = styled.label`
   display: flex;
   flex-direction: column;
-  width: 250px;
+  /* width: 250px; */
+  /* min-width:100% */
   line-height: ${p => p.theme.lineHeights.body};
   color: ${p => p.theme.colors.gray};
-  @media screen and (max-width: 480px) {
+  /* @media screen and (max-width: 480px) {
     width: 230px;
-  }
+  } */
 `;
 
 export const Input = styled.input`
   padding: ${p => p.theme.space[3]}px;
+  /* width: 100%; */
   border: ${p => p.theme.borders.normal};
   border-radius: ${p => p.theme.radii.normal};
   outline: none;

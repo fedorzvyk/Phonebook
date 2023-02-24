@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { editContact } from 'redux/contacts/contacts.operations';
 import { selectContacts } from 'redux/contacts/selectors';
+import { toast } from 'react-toastify';
 
 import { Form } from './EditForm.styled';
 import { Input, Label, Button } from 'commonStyles/coommonStyles.styled';
@@ -25,7 +26,7 @@ export default function EditForm({ contact, onClose }) {
         setNumber(value);
         break;
       default:
-        alert(`case ${name} doesn't support`);
+        toast.info(`case ${name} doesn't support`);
         break;
     }
   };
@@ -36,14 +37,14 @@ export default function EditForm({ contact, onClose }) {
     const repeatingName = contacts.find(contact => contact.name === name);
 
     if (repeatingName) {
-      alert(`${name} is already in contacts.`);
+      toast.info(`${name} is already in contacts.`);
       return null;
     }
 
     try {
       dispatch(editContact({ id: contact.id, name, number }));
     } catch (error) {}
-    alert(`contact ${name} was successfully changed`);
+    toast.success(`contact ${name} was successfully changed`);
     onClose();
   };
 

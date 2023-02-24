@@ -6,6 +6,7 @@ import { Box } from 'commonStyles/Box';
 // import ContactsPage from 'pages/ContactsPage';
 // import { Box, Center, Image, Flex, Badge, Text } from '@chakra-ui/react';
 import { AppBar } from './AppBar/AppBar';
+import { ToastContainer } from 'react-toastify';
 
 export const Layout = () => {
   return (
@@ -28,6 +29,7 @@ export const Layout = () => {
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
+      <ToastContainer />
     </Box>
   );
 };

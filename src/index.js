@@ -8,7 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './theme';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-// import { ChakraProvider } from '@chakra-ui/react';
+import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

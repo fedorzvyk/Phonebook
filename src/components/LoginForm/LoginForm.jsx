@@ -1,12 +1,16 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/auth.operations';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-// import css from './LoginForm.module.css';
-import { Form } from './LoginForm.styled';
+import { toast } from 'react-toastify';
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
+
+import { EyeBtn, Form, PswrdInput } from './LoginForm.styled';
 import { Input, Label, Button } from 'commonStyles/coommonStyles.styled';
+import { useState } from 'react';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
+
+  const [isPass, setIsPass] = useState(true);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -16,7 +20,7 @@ export const LoginForm = () => {
       password: form.elements.password.value,
     };
     if (user.password.length < 7) {
-      return Notify.failure('Password should be at least 7 characters');
+      return toast.error('Password should be at least 7 characters');
     }
     dispatch(
       logIn({
@@ -29,7 +33,7 @@ export const LoginForm = () => {
         }
       })
       .catch(e => {
-        Notify.failure('Email or Password is incorrect');
+        toast.error('Email or Password is incorrect');
       });
     form.reset();
   };
@@ -42,8 +46,18 @@ export const LoginForm = () => {
       </Label>
       <Label>
         Password
-        <Input type="password" name="password" />
+        <PswrdInput>
+          <Input type={isPass ? 'password' : 'text'} name="password" />
+          <EyeBtn type="button" onClick={() => setIsPass(prev => !prev)}>
+            {isPass ? (
+              <FaRegEye color="gray" />
+            ) : (
+              <FaRegEyeSlash color="gray" />
+            )}
+          </EyeBtn>
+        </PswrdInput>
       </Label>
+
       <Button type="submit">Log In</Button>
     </Form>
   );
