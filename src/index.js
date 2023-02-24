@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           {/* <ChakraProvider theme={theme}> */}
-          <BrowserRouter basename="/phonebook-">
+          <BrowserRouter basename="/phonebook">
             <App />
           </BrowserRouter>
           {/* </ChakraProvider> */}
