@@ -1,13 +1,27 @@
 {
   "files": {
-    "main.css": "/my-react-template/static/css/main.073c9b0a.css",
-    "main.js": "/my-react-template/static/js/main.7d3112b8.js",
-    "index.html": "/my-react-template/index.html",
-    "main.073c9b0a.css.map": "/my-react-template/static/css/main.073c9b0a.css.map",
-    "main.7d3112b8.js.map": "/my-react-template/static/js/main.7d3112b8.js.map"
+    "main.css": "/phonebook-/static/css/main.2acbcadd.css",
+    "main.js": "/phonebook-/static/js/main.e721cc45.js",
+    "static/js/575.cfab2213.chunk.js": "/phonebook-/static/js/575.cfab2213.chunk.js",
+    "static/js/169.1e852733.chunk.js": "/phonebook-/static/js/169.1e852733.chunk.js",
+    "static/js/284.b04aaa90.chunk.js": "/phonebook-/static/js/284.b04aaa90.chunk.js",
+    "static/js/487.6ba8731d.chunk.js": "/phonebook-/static/js/487.6ba8731d.chunk.js",
+    "static/js/317.756adbbb.chunk.js": "/phonebook-/static/js/317.756adbbb.chunk.js",
+    "static/js/686.b212639c.chunk.js": "/phonebook-/static/js/686.b212639c.chunk.js",
+    "static/media/phones.jpg": "/phonebook-/static/media/phones.69304aefc471f2a20ed5.jpg",
+    "static/media/phone_animation.gif": "/phonebook-/static/media/phone_animation.5a2e5dd1982b9b4a808b.gif",
+    "index.html": "/phonebook-/index.html",
+    "main.2acbcadd.css.map": "/phonebook-/static/css/main.2acbcadd.css.map",
+    "main.e721cc45.js.map": "/phonebook-/static/js/main.e721cc45.js.map",
+    "575.cfab2213.chunk.js.map": "/phonebook-/static/js/575.cfab2213.chunk.js.map",
+    "169.1e852733.chunk.js.map": "/phonebook-/static/js/169.1e852733.chunk.js.map",
+    "284.b04aaa90.chunk.js.map": "/phonebook-/static/js/284.b04aaa90.chunk.js.map",
+    "487.6ba8731d.chunk.js.map": "/phonebook-/static/js/487.6ba8731d.chunk.js.map",
+    "317.756adbbb.chunk.js.map": "/phonebook-/static/js/317.756adbbb.chunk.js.map",
+    "686.b212639c.chunk.js.map": "/phonebook-/static/js/686.b212639c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.7d3112b8.js"
+    "static/css/main.2acbcadd.css",
+    "static/js/main.e721cc45.js"
   ]
 }
